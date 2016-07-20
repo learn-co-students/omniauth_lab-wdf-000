@@ -22,7 +22,6 @@ RSpec.describe SessionsController, type: :controller do
       auth = ActiveSupport::HashWithIndifferentAccess.new(auth)
       @request.env['omniauth.auth'] = auth
       get :create
-binding.pry
       expect(@request.session[:user_id]).to eq(user.id)
     end
 
