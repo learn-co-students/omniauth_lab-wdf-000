@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
       user.name = auth_hash['info']['name']
     end
     session[:user_id] = user.try(:id)
-    # redirect_to '/'
+    redirect_to '/'
   end
 
 
