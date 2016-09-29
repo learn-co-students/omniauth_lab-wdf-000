@@ -8,9 +8,12 @@ class SessionsController < ApplicationController
       u.name = auth['info']['name']
     end
     session[:user_id] = user.id
+    redirect_to "/#{session[:user_id]}/index"
   end
 
   def destroy
+    session.delete :user_id
+    redirect_to '/'
   end
 
   def auth
