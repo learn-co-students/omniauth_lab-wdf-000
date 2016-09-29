@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   get '/:user/index', to: 'users#index'
 
-  get 'login', to: 'sessions#new'
-  post 'login', to: 'sessions#create'
-  get 'logout', to: 'sessions#destroy'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  post '/logout', to: 'sessions#destroy'
 
   get '/auth/:provider/callback' => 'sessions#create'
   # The priority is based upon order of creation: first created -> highest priority.
